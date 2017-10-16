@@ -1,7 +1,19 @@
-﻿//
-// Scale Strokes of selected objects
-//
-// 
+﻿#target illustrator
+
+/******************************
+* @title ScaleStrokes
+* @author Jonatan Hilden
+* @info http://koponen-hilden.fi
+* @version 1.0.0
+
+
+DESCRIPTION
+Scale Strokes of selected objects by given percentage.
+Default value is correct scaling for strokes when importing QGIS svg to Illustrator
+
+
+*******************************/
+
 
 var scriptID = "Scale Strokes ";
 var SCALEDEFAULT = 0.084666836
@@ -52,7 +64,6 @@ box.panel.group.okBtn.onClick = function(){
 
 function scaleStroke(s) {
     if(selection.length> 0) {
-    var doc = app.activeDocument;
     var numPageItems = 0;
     var numGroups = 0;
     var scaleStroke = s;
@@ -61,7 +72,6 @@ function scaleStroke(s) {
     for(i = 0; i<selection.length; i++) {
     	if(selection[i].stroked == true) {
     		selection[i].strokeWidth *= scaleStroke;
-    // alert(scriptID + doc.pageItems[i].strokeWidth); 	
 }
     numPageItems += 1;
 }
