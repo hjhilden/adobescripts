@@ -51,7 +51,7 @@ box.panel.group.okBtn.onClick = function(){
 
 
 
- function roundTo(n, digits) {
+function roundTo(n, digits) {
      if (digits === undefined) {
        digits = 0;
      }
@@ -64,28 +64,22 @@ box.panel.group.okBtn.onClick = function(){
 
 function scaleStroke(s) {
     if(selection.length> 0) {
-    var numPageItems = 0;
-    var numGroups = 0;
+    var numScaledItems = 0;
     var scaleStroke = s;
 	
     // scale selected items
     for(i = 0; i<selection.length; i++) {
     	if(selection[i].stroked == true) {
-    		selection[i].strokeWidth *= scaleStroke;
-}
-    numPageItems += 1;
-}
-    // subtract the group items themselves since only their contents count
-    var numSelectedObjects = numPageItems - numGroups;
-    if(numGroups> 0) {
-    alert(scriptID + "\n" + " by " + roundTo(scaleStroke * 100, 2) + "% of " + numSelectedObjects + " " +((numSelectedObjects == 1)?"object": "objects") + ", " + numGroups +((numGroups == 1)?" group": " groups"), scriptID, true);
-}
-else {
-    alert(scriptID + "\n" + " by " + roundTo(scaleStroke * 100, 2) + "% of " + numSelectedObjects + " " +((numSelectedObjects == 1)?"object": "objects"), scriptID, true);
-}
-}
-else {
-    alert(scriptID + "\nError: Please select something", scriptID, false);
-}
+            selection[i].strokeWidth *= scaleStroke;
+            numScaledItems += 1;
+        }
+    }
+    if(numScaledItems> 0)  {
+        alert(scriptID + "\n" + " by " + roundTo(scaleStroke * 100, 2) + "% of " + numScaledItems + " " +((numScaledItems == 1)?"object": "objects"), scriptID,     true);
+    }
+    }
+    else {
+        alert(scriptID + "\nError: Please select something", scriptID, false);
+    }
 }
 
