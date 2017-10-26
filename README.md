@@ -5,3 +5,4 @@ This is a collection of small scripts that accomplish different useful utility t
 ## Current scripts 
 - ScaleStroke
 - ReplaceSymbol
+- d3colortest
