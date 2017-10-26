@@ -1,8 +1,8 @@
 # adobescripts
 work-in-progress scripts for Adobe software, primarily Illustrator 
-This is a collection of small scripts that accomplish different useful utility tasks.
+This is a collection of small scripts that accomplish different, possibly useful utility tasks.
 
-All  interface stuff is made using this useful document as reference 
+All  interface stuff is made using this handy document as reference 
 http://www.kahrel.plus.com/indesign/scriptui.html
 
 ## Current scripts 
