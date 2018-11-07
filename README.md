@@ -18,7 +18,7 @@ Scales strokes by a given percentage. Default value for correcting strokes in SV
 Currently works only with ungrouped objects (any strokes inside groups are ignored).
 
 ### ReplaceWithSymbol v2
-Replace objects with a symbol by selecting the objects to replace and the desired symbol. Gives a choice of using the size of the symbol (default) or scaling the symbols to match the size of replaced objects.  
+Script for replacing graphic objects with symbols. Select a number of objects and a **symbol instance** before running the script. Gives a choice of using the size of the symbol (default) or scaling the symbols to match the size of replaced objects.  
 Groups are treated as single objects.
 
 ### d3colortest
