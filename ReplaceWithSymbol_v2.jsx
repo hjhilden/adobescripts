@@ -6,9 +6,8 @@
 
 
 DESCRIPTION
-Replace objects with a symbol by selecting them and the desired symbol.
-Treats groups as singe objects. Slow if the file has many objects.
-
+Script for replacing graphic objects with symbols. Select a number of objects and a symbol instance before running the script. Gives a choice of using the size of the symbol (default) or scaling the symbols to match the size of replaced objects.  
+Groups are treated as single objects. Potentially slow for many objects.
 
 *******************************/
 
