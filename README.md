@@ -4,6 +4,8 @@ This is a collection of small scripts that accomplish different, possibly useful
 
 To get Illustrator scripts to appear in the *File > Scripts menu*, put them in the folder `/Applications/Adobe Illustrator CC 2017/Presets.localized/en_US/Script`or corresponding location  (requires restart).
 
+Alternatively, run the scripts from ExtendScript Toolkit.
+
 All  interface stuff is made using this handy document as reference: 
 http://www.kahrel.plus.com/indesign/scriptui.html
 
@@ -15,9 +17,9 @@ http://www.kahrel.plus.com/indesign/scriptui.html
 Scales strokes by a given percentage. Default value for correcting strokes in SVG graphics exported from QGIS. 
 Currently works only with ungrouped objects (any strokes inside groups are ignored).
 
-### ReplaceSymbol
-Replace objects with a symbol by selecting them and the desired symbol.
-Treats groups as singe objects. Slow if the file has many objects.
+### ReplaceWithSymbol v2
+Replace objects with a symbol by selecting the objects to replace and the desired symbol. Gives a choice of using the size of the symbol (default) or scaling the symbols to match the size of replaced objects.  
+Groups are treated as single objects.
 
 ### d3colortest
 Simple test  script for importing  **D3 color** functionality in Illustrator. 
