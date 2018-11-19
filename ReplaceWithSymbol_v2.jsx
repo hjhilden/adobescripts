@@ -92,15 +92,16 @@ function replaceWithSymbol(docRef, selectedSymbol, clearOriginals, scaleSymbol){
 
 		// loop through remaining selection and replace them with symbols on current layer
 		// clear originals if desired
-		// TODO: modify to use faster built-in "selection" parameter instead of looping doc.pageItems
-
+          
 		for(i=0;i<docRef.selection.length;i++){  
 				var currObj=docRef.selection[i];  
+                   // $.write(currObj.layer);
 				var currLeft=currObj.left;  
 				var currTop=currObj.top;  
 				var currWidth=currObj.width;  
 				var currHeight=currObj.height;  
 				var currInstance=docRef.symbolItems.add(selectedSymbol); 
+                    
 				if (scaleSymbol){
 					currInstance.width*=currHeight/currInstance.height;  
 					currInstance.height=currHeight;  
@@ -129,6 +130,7 @@ function getSymbolInSelection(docRef, selectedSymbol) {
     // loop through selected items to get the desired symbol and deselect this item
     for(i=0;i<docRef.selection.length;i++){  
 			if(docRef.selection[i].symbol) {
+                $.write(docRef.selection[i].layer);
 				selectedSymbol = docRef.selection[i].symbol;
 				docRef.selection[i].selected = false;
 				numSelectedItems -= 1;
