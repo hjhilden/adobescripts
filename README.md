@@ -19,7 +19,7 @@ Currently works only with ungrouped objects (any strokes inside groups are ignor
 
 ### ReplaceWithSymbol v2
 Script for replacing graphic objects with symbols. Select a number of objects and a **symbol instance** before running the script. Gives a choice of using the size of the symbol (default) or scaling the symbols to match the size of replaced objects.  
-Groups are treated as single objects.
+Groups are treated as single objects. Places the new symbols on the currently active layer. Note that it is slow when dealing with hundreds of symbols – expect minutes of working time. 
 
 ### d3colortest
 Simple test  script for importing  **D3 color** functionality in Illustrator. 
