@@ -18,7 +18,10 @@ var docRef = app.activeDocument;
 
 var selectedSymbol = null; 
 // find a symbol in the selection (first symbol found is used)
+
 selectedSymbol = getSymbolInSelection(docRef, selectedSymbol);
+
+//$.write(selectedSymbol);
 
 // script will not work unless selection includes a symbol
 var symbolName = 'NONE SELECTED – script will fail!';
@@ -90,7 +93,7 @@ okButton.onClick = function(){
 
 function replaceWithSymbol(docRef, selectedSymbol, clearOriginals, scaleSymbol){ 
 
-		// loop through remaining selection and replace them with symbols on current layer
+		// loop through remaining selection and replace them with symbols on active layer
 		// clear originals if desired
           
 		for(i=0;i<docRef.selection.length;i++){  
@@ -100,7 +103,7 @@ function replaceWithSymbol(docRef, selectedSymbol, clearOriginals, scaleSymbol){
 				var currTop=currObj.top;  
 				var currWidth=currObj.width;  
 				var currHeight=currObj.height;  
-				var currInstance=docRef.symbolItems.add(selectedSymbol); 
+				var currInstance=docRef.activeLayer.symbolItems.add(selectedSymbol); 
                     
 				if (scaleSymbol){
 					currInstance.width*=currHeight/currInstance.height;  
@@ -108,8 +111,8 @@ function replaceWithSymbol(docRef, selectedSymbol, clearOriginals, scaleSymbol){
 					currInstance.left=currLeft;  
 					currInstance.top=currTop;  
 				} else {
-					currInstance.position = Array( currObj.position[0]+currObj.width/2 - currInstance.width/2,
-					currObj.position[1]-currObj.height/2 + currInstance.height/2 );
+					currInstance.position = Array( currObj.position[0]+currWidth/2 - currInstance.width/2,
+					currObj.position[1]-currHeight/2 + currInstance.height/2 );
 				}
 				currObj.selected = false;
 				currInstance.selected = true;
@@ -128,14 +131,17 @@ function replaceWithSymbol(docRef, selectedSymbol, clearOriginals, scaleSymbol){
 
 function getSymbolInSelection(docRef, selectedSymbol) {
     // loop through selected items to get the desired symbol and deselect this item
+    var symbolLayer = null;
     for(i=0;i<docRef.selection.length;i++){  
 			if(docRef.selection[i].symbol) {
-                $.write(docRef.selection[i].layer);
+                symbolLayer = docRef.selection[i].layer;
 				selectedSymbol = docRef.selection[i].symbol;
 				docRef.selection[i].selected = false;
 				numSelectedItems -= 1;
 				}
   		numSelectedItems += 1;
 	}
+    
+
     return  selectedSymbol;
 }
