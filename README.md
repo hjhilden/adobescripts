@@ -2,9 +2,9 @@
 ## Work-in-progress scripts for Adobe software, primarily Illustrator  CC
 This is a collection of small scripts that accomplish different, possibly useful utility tasks.
 
-To get Illustrator scripts to appear in the *File > Scripts menu*, put them in the folder `/Applications/Adobe Illustrator CC 2017/Presets.localized/en_US/Script`or corresponding location  (requires restart).
+To get Illustrator scripts to appear in the *File > Scripts menu*, put them in the folder `/Applications/Adobe Illustrator CC [insert version]/Presets.localized/en_US/Script`or corresponding location  (requires restart).
 
-Alternatively, run the scripts from ExtendScript Toolkit.
+Alternatively, run the scripts from the menu.
 
 All  interface stuff is made using this handy document as reference: 
 http://www.kahrel.plus.com/indesign/scriptui.html
@@ -14,7 +14,7 @@ http://www.kahrel.plus.com/indesign/scriptui.html
 ## Current scripts 
 
 ### ScaleStroke
-Scales strokes by a given percentage. Default value for correcting strokes in SVG graphics exported from QGIS. 
+Scales strokes by a given percentage. Default value for correcting strokes in SVG graphics exported from QGIS (this particular issue is fixed as of 2024).
 Currently works only with ungrouped objects (any strokes inside groups are ignored).
 
 ### ReplaceWithSymbol v2
